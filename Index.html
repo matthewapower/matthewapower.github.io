@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>matthewapower</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<nav>
+		<div class="container">
+			<h1>matthewapower</h1>
+		</div>
+	</nav>
+	<div class="container">
+		<ul>
+			<li><a href="http://www.instagram.com/matthewapower" target="_blank">Instagram</a></li>
+			<li><a href="http://www.twitter.com/matthewapower" target="_blank">Twitter</a></li>
+			<li><a href="https://www.linkedin.com/in/matt-power-b860aa116" target="_blank">LinkedIn</a></li>
+			<li><a href="https://github.com/matthewapower" target="_blank">Github</a></li>
+		</ul>
+		<div id="c">
+			<img src="wave.svg" class="display-trigger" id="wave">
+			<img class="book" src="DoubtfulBook.svg"id="book">
+			<h4>I am a designer and front end developer.</h4>
+		</div>
+	</div>
+	<script   src="https://code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var box = $('#c');
+					wave = $('#wave');
+					book = $('#book');
+					filter = ['invert(1)', 'blur(4px)', 'brightness(7)', 'drop-shadow(8px 8px 2px green)', 'drop-shadow(-8px 4px 2px red)'];
+					intervalId = 0;
+
+			box.each(function () {
+			  var hovered = false;
+			  var loop = window.setInterval(function () {
+			    if (hovered) {
+			     	scramble();
+			    } else {
+			    	book.css({
+			    		'filter': 'none',
+							'-webkit-filter': 'none'
+			    	});
+			    }
+			  }, 50);
+			
+			  $(this).hover(
+			    function () {
+			      hovered = true;
+			    },
+			    function () {
+			      hovered = false;
+			    }
+			  );
+			});
+
+			function scramble() {
+				var rand =filter[Math.floor(Math.random() * filter.length)];
+					$('.filter').css({
+						'filter': rand,
+						'-webkit-filter': rand
+					});
+			}
+			
+			box.hover(function(){
+				wave.toggleClass('display-trigger');
+				book.toggleClass('filter');
+			});
+
+			$(document).on('touchStart', function(){
+				wave.toggleClass('display-trigger');
+				book.toggleClass('filter');
+			});
+		});
+	</script>
+</body>
+
+</html>
