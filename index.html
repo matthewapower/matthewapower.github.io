@@ -28,60 +28,9 @@
 		<div id="c">
 			<img src="wave.gif" class="display-trigger wave" id="wave">
 			<img class="book" src="DoubtfulBook.svg"id="book">
-			<h4>I am a designer and front end developer.</h4>
+			<h2>I am a designer and front end developer.</h2>
 		</div>
 	</div>
-	<script   src="https://code.jquery.com/jquery-3.1.1.js"   integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="   crossorigin="anonymous"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			var box = $('#c');
-					wave = $('#wave');
-					book = $('#book');
-					filter = ['invert(1)', 'blur(4px)', 'brightness(7)', 'drop-shadow(8px 8px 2px green)', 'drop-shadow(-8px 4px 2px red)'];
-					intervalId = 0;
-
-			box.each(function () {
-			  var hovered = false;
-			  var loop = window.setInterval(function () {
-			    if (hovered) {
-			     	scramble();
-			    } else {
-			    	book.css({
-			    		'filter': 'none',
-							'-webkit-filter': 'none'
-			    	});
-			    }
-			  }, 50);
-
-			  $(this).hover(
-			    function () {
-			      hovered = true;
-			    },
-			    function () {
-			      hovered = false;
-			    }
-			  );
-			});
-
-			function scramble() {
-				var rand =filter[Math.floor(Math.random() * filter.length)];
-					$('.filter').css({
-						'filter': rand,
-						'-webkit-filter': rand
-					});
-			}
-
-			box.hover(function(){
-				wave.toggleClass('display-trigger');
-				book.toggleClass('filter');
-			});
-
-			$(window).on('devicemotion', function(e){
-				wave.toggleClass('display-trigger filter');
-				book.toggleClass('filter');
-			});
-		});
-	</script>
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
