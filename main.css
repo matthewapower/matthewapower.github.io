@@ -82,7 +82,7 @@ img {
 
 @media (max-width: 600px) {
 	.container {
-		width: 100%;
+		width: 90%;
 	}
 
 	#c {
