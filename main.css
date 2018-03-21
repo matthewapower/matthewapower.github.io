@@ -13,17 +13,6 @@ h1 {
 	display: inline;
 }
 
-h2 {
-	width: 300px;
-	font-size: 22px;
-	text-align: justify;
-	position: absolute;
-	top: 70%;
-	left:50%;
-	transform: translate(-50%, -50%);
-	-webkit-transform: translate(-50%, -50%);
-}
-
 ul {
 	margin-top: 40px;
 	padding-left: 0;
@@ -76,7 +65,8 @@ marquee h2 {
 
 .book {
 	width: 40px;
-	display: inline;
+	display: block;
+	margin: 0;
 }
 
 .container {
