@@ -10,19 +10,24 @@ nav {
 h1 {
 	margin: 0;
 	padding: 15px 0;
-	display: inline;
+	display: block;
+	text-align: center;
+	font-size: 24px;
 }
 
 ul {
-	margin-top: 40px;
+	margin: 40px auto;
 	padding-left: 0;
 	position: relative;
 	z-index: 1000;
+	text-align: center;
 }
 
 li {
 	list-style-type: none;
-	margin: 0;
+	display: inline;
+	text-align: center;
+	margin: 0 auto;
 }
 
 img {
@@ -37,36 +42,14 @@ section a.text-center {
 section img {
 	max-width: 80%;
 	width: 700px;
-	margin: 0 auto 20px;
+	margin: 0 auto 80px;
 	display: block;
 }
 
-marquee {
-	width: 100vw;
-	position: fixed;
-	top: 0;
-	left: 0;
-	text-align: left;
-}
-
-marquee h2 {
-	position: static;
-	color: pink;
-}
-
-.display-trigger {
-	display: none;
-}
-
-.wave {
-	width: 100%;
-	height: auto;
-}
-
-.book {
-	width: 40px;
+.logo {
+	width: 100px;
 	display: block;
-	margin: 0;
+	margin: 100px auto 40px;
 }
 
 .container {
@@ -77,19 +60,6 @@ marquee h2 {
 .filter {
 	-webkit-filter: blur(4px);
 	filter: blur(4px);
-}
-
-#c {
-	margin: 0 auto;
-	width: 400px;
-	height: 400px;
-	position: absolute;
-	top: 50%;
-	left:50%;
-	transform: translate(-50%, -50%);
-	-webkit-transform: translate(-50%, -50%);
-	cursor: help;
-	transition: all 500;
 }
 
 
@@ -103,14 +73,13 @@ marquee h2 {
 		height: 210px;
 	}
 
-	.book {
+	.logo {
 		width: 60px;
 		height: 100px;
 	}
 
-	h4 {
-		width: 210px;
-		font-size: 17px;
+	h1 {
+		font-size: 20px;
 	}
 
 }
