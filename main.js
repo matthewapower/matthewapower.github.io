@@ -9,14 +9,14 @@ $(document).ready(function(){
           link = block.source,
           img = block.image.large.url,
           title = block.title,
-          description = block.description;
+          description = block.description_html;
 
       if (link == null) { link = img; } else { link = link.url; }
 
       if (description == null) { description = ' '; }
 
       container.append(
-        '<a class="block" href="'+ link +'" target="_blank"><img class="block--img" src="' + img +'"/><h2 class="block--title">' + title + '</h2><p class="block--description">' + description +'</p></a>'
+        '<a class="block" href="'+ link +'" target="_blank"><img class="block--img" src="' + img +'"/></a><h2 class="block--title">' + title + '</h2><div>' + description + '</div>'
       );
     }
   });
@@ -24,3 +24,85 @@ $(document).ready(function(){
   $('.open--boii').click(function(){ $('.overlay').addClass('active'); });
   $('.close--boii').click(function(){ $('.overlay').removeClass('active'); });
 });
+
+// var x = 0,
+//     y = 0;
+//
+// function setup() {
+//   createCanvas(windowWidth, windowHeight);
+// }
+//
+// function draw() {
+//   // background('white');
+//   fill('red');
+//   strokeWeight(0)
+//   rect(mouseX, mouseY,20,20);
+// }
+
+// var system;
+//
+// function setup() {
+//   createCanvas(windowWidth, windowHeight);
+//   system = new ParticleSystem(createVector());
+// }
+//
+// function draw() {
+//   background(255);
+//   system.addParticle();
+//   system.run();
+// }
+//
+// // A simple Particle class
+// var Particle = function() {
+//   var x = random(width),
+//       y = random(-100, -10);
+//
+//   this.acceleration = createVector(0, 0.005);
+//   this.velocity = createVector(random(-.5, .5), random(-.5, 0));
+//   this.position = createVector(x, y);
+//   this.lifespan = 255;
+// };
+//
+// Particle.prototype.run = function() {
+//   this.update();
+//   this.display();
+// };
+//
+// // Method to update position
+// Particle.prototype.update = function(){
+//   this.velocity.add(this.acceleration);
+//   this.position.add(this.velocity);
+//   // this.lifespan -= 2;
+// };
+//
+// // Method to display
+// Particle.prototype.display = function() {
+//   stroke(200, this.lifespan);
+//   strokeWeight(2);
+//   fill(127, this.lifespan);
+//   ellipse(this.position.x, this.position.y, 12, 12);
+// };
+//
+// // Is the particle still useful?
+// Particle.prototype.isDead = function(){
+//   return this.lifespan < 0;
+// };
+//
+// var ParticleSystem = function(position) {
+//   this.origin = position.copy();
+//   this.particles = [];
+// };
+//
+// ParticleSystem.prototype.addParticle = function() {
+//   this.particles.push(new Particle(this.origin));
+// };
+//
+// ParticleSystem.prototype.run = function() {
+//   for (var i = this.particles.length-1; i >= 0; i--) {
+//     var p = this.particles[i];
+//     p.run();
+//     if (p.isDead()) {
+//       this.particles.splice(i, 1);
+//     }
+//   }
+// };

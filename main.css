@@ -75,13 +75,18 @@ a:focus {
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(255,255,255,.2);
+  background-color: rgba(0,0,0,.8);
   display: grid;
   grid-gap: 40px;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 3fr 1fr 2fr;
   grid-template-rows: 1fr;
   padding: 40px;
   overflow: scroll;
+  color: white;
+}
+
+.overlay a {
+  color: white;
 }
 
 .overlay {
@@ -94,6 +99,11 @@ a:focus {
 
 .block--img {
   max-width: 100%;
+}
+
+.block--title {
+  font-size: 2rem;
+  text-transform: uppercase;
 }
 
 .close--boii {
